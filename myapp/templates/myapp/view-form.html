@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <title>form</title>
+
+</head>
+<body>
+    <br>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'myapp:Employee-form' %}">Employee-form</a></li>
+                        <li><a href="{% url 'myapp:edit-form' %}">edit-form</a></li>
+                        <li><a href="{% url 'myapp:view-form' %}">view-form</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+        </div>
+
+        <h1>แสดงข้อมูล Employee</h1>
+        {% for e in employee %}
+        <div class="container">
+            <!-- <div class="row"> -->
+                <div class="col">{{ e.EmpNo }}</div>
+                <div class="col">{{ e.FName }}</div>   
+                <div class="col">{{ e.LName }}</div>
+                <div class="col">{{ e.Sex }}</div>
+                <div class="col">{{ e.Salary }}</div>
+                <div class="col">{{ e.DeptCode }}</div>
+                <br>
+            <!-- </div> -->
+        </div>
+        {% endfor %}
+
+    </body>
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<!-- bootstrap.js in django js file -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> 
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.datepicker').datepicker();
+    });
+    </script>
+
+</html>
+
